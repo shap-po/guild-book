@@ -1,0 +1,28 @@
+<div class="hero">
+  <div class="hero-content">
+    <h1>Create and Share D&D Character Profiles</h1>
+
+    <p>
+      Build detailed profiles for your characters and explore ones created by
+      others.
+    </p>
+
+    <div>
+      <button mat-raised-button color="primary" [routerLink]="['/create']">
+        Create a Character
+      </button>
+    </div>
+  </div>
+</div>
+
+<section class="featured-profiles">
+  <div class="container">
+    <h2>Featured Profiles</h2>
+
+    <div class="profile-grid">
+      <ng-container *ngFor="let profile of featuredProfiles">
+        <app-profile-card [profile]="profile" />
+      </ng-container>
+    </div>
+  </div>
+</section>

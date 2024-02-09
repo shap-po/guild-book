@@ -1,0 +1,52 @@
+.image-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+
+  &:not(.has-image) {
+    border: 2px dashed #ccc;
+  }
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &.fileover .overlay {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  button {
+    margin-bottom: 8px;
+  }
+
+  span {
+    font-size: 1.2em;
+
+    &.error {
+      color: #f66;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
