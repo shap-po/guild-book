@@ -14,5 +14,6 @@ import { ProfileBase } from '@app/core/models/profile.model';
   styleUrl: './profile-card.component.scss',
 })
 export class ProfileCardComponent {
+  @Input() uuid!: string;
   @Input() profile!: ProfileBase;
 }

@@ -1,0 +1,27 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+
+  .profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+/* Add hover effect for profile cards */
+app-profile-card {
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+}

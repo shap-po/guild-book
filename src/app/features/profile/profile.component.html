@@ -1,0 +1,8 @@
+<form [formGroup]="form">
+  <button (click)="fill()">fill</button>
+  <button (click)="clear()">clear</button>
+  <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+  <button type="submit" (click)="save()" mat-flat-button *ngIf="edit">
+    Save
+  </button>
+</form>

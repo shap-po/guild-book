@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgIf } from '@angular/common';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -6,15 +6,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { ImageInputDirective } from './image-input.directive';
 
 @Component({
-  selector: 'image-input',
+  selector: 'app-image-input',
   standalone: true,
   imports: [MatButtonModule, MatIconModule, NgIf, ImageInputDirective],
   template: `
     <div
-      class="image-input"
+      class="app-image-input"
       image-input
       (fileDropped)="onFileDrop($event)"
-      [class.has-image]="!!image"
+      [class.has-image]="!!value"
       (click)="fileInputRef.click()"
     >
       <input
@@ -25,7 +25,7 @@ import { ImageInputDirective } from './image-input.directive';
         accept="image/png, image/jpeg"
       />
 
-      <ng-container *ngIf="!image; else imageRef">
+      <ng-container *ngIf="!value; else imageRef">
         <button mat-raised-button color="primary">
           <mat-icon>add_photo_alternate</mat-icon>
           Select Image
@@ -35,7 +35,7 @@ import { ImageInputDirective } from './image-input.directive';
       </ng-container>
 
       <ng-template #imageRef>
-        <img [src]="image" alt="image" />
+        <img [src]="value" alt="image" />
       </ng-template>
 
       <div class="overlay"></div>
@@ -44,7 +44,7 @@ import { ImageInputDirective } from './image-input.directive';
   styleUrl: './image-input.component.scss',
 })
 export class ImageInputComponent {
-  image?: string | ArrayBuffer | null;
+  @Input() value?: string | ArrayBuffer | null;
   error?: string;
 
   @Output() fileDropped = new EventEmitter<File>();
@@ -67,7 +67,7 @@ export class ImageInputComponent {
     reader.onload = (e) => {
       const result = e.target?.result;
       if (!result) return;
-      this.image = result;
+      this.value = result;
       this.fileDropped.emit(file);
     };
     reader.readAsDataURL(file);

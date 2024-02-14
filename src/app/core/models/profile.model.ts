@@ -1,10 +1,9 @@
 /** Required fields for a profile. Used inside the `ProfileCardComponent` */
 export interface ProfileBase {
-  uuid: string;
   name: string;
   race: string;
-  _class: string;
-  avatarUrl: string | null;
+  class: string;
+  avatar: string | null;
   level: number;
   shortDescription: string;
 }
@@ -29,7 +28,7 @@ export interface AttributeSet {
 }
 
 /** Proficiencies could be added in the future */
-export type Skill = boolean | null;
+export type Skill = boolean;
 
 /** Skills of a character */
 export interface SkillSet {

@@ -1,0 +1,67 @@
+$objects: avatar, name, class, race, level, shortDescription, attributes, skills,
+  longDescription;
+
+:host {
+  display: block;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+:host ::ng-deep formly-field {
+  height: auto;
+
+  // Grid layout for the formly fields
+  // | Avatar (drop file) | Name | Race | Class | Level |
+  // | Avatar (drop file) |      Short description      |
+  // | Avatar (drop file) |      Short description      |
+  // |                Attributes (inline)               |
+  // |   Skills (rows)   |      Long description        |
+  // |   Skills (rows)   |      Long description        |
+  // |   Skills (rows)   |      Long description        |
+
+  &.formly-field-root > formly-field-object {
+    display: grid;
+    grid-gap: 0.25rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+      "avatar name class race level"
+      "avatar shortDescription shortDescription shortDescription shortDescription"
+      "avatar shortDescription shortDescription shortDescription shortDescription"
+      "attributes attributes attributes attributes attributes"
+      "skills longDescription longDescription longDescription longDescription"
+      "skills longDescription longDescription longDescription longDescription"
+      "skills longDescription longDescription longDescription longDescription";
+  }
+
+  // loop through the objects and set the grid area to the object name
+  @each $object in $objects {
+    &.formly-field-#{$object} {
+      grid-area: #{$object};
+    }
+  }
+
+  &.formly-field-avatar,
+  &.formly-field-avatar .app-image-input {
+    aspect-ratio: 1 / 1;
+    width: 250px;
+  }
+
+  &.formly-field-attributes > formly-field-object {
+    display: grid;
+    grid-gap: 0.25rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+      "legend legend legend legend legend legend"
+      "0 1 2 3 4 5";
+
+    legend {
+      grid-area: legend;
+    }
+
+    formly-field {
+      //make the input fields smaller and squarer
+      width: 50%;
+    }
+  }
+}

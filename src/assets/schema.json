@@ -14,27 +14,9 @@
       }
     }
   },
-  "required": [
-    "uuid",
-    "name",
-    "race",
-    "class",
-    "level",
-    "avatar",
-    "shortDescription"
-  ],
+  "required": ["name", "race", "class", "level", "avatar", "shortDescription"],
   "type": "object",
   "properties": {
-    "uuid": {
-      "type": "string",
-      "format": "uuid",
-      "title": "UUID",
-      "widget": {
-        "formlyConfig": {
-          "hide": true
-        }
-      }
-    },
     "name": {
       "type": "string",
       "title": "Name",
@@ -127,27 +109,27 @@
       "properties": {
         "strength": {
           "$ref": "#/definitions/attribute",
-          "title": "Strength"
+          "title": "Str"
         },
         "dexterity": {
           "$ref": "#/definitions/attribute",
-          "title": "Dexterity"
+          "title": "Dex"
         },
         "constitution": {
           "$ref": "#/definitions/attribute",
-          "title": "Constitution"
+          "title": "Con"
         },
         "intelligence": {
           "$ref": "#/definitions/attribute",
-          "title": "Intelligence"
+          "title": "Int"
         },
         "wisdom": {
           "$ref": "#/definitions/attribute",
-          "title": "Wisdom"
+          "title": "Wis"
         },
         "charisma": {
           "$ref": "#/definitions/attribute",
-          "title": "Charisma"
+          "title": "Cha"
         }
       }
     },
