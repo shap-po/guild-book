@@ -2,7 +2,7 @@
   "eah": {
     "name": "Eah",
     "class": "Druid",
-    "avatar": "/assets/backend-data/Eah.png",
+    "avatar": "assets/backend-data/Eah.png",
     "level": 2,
     "race": "Half-ork",
     "shortDescription": "Eah talk not much. Job done fast."
@@ -10,7 +10,7 @@
   "shadow": {
     "name": "Shadow",
     "class": "Mage",
-    "avatar": "/assets/backend-data/Shadow.png",
+    "avatar": "assets/backend-data/Shadow.png",
     "level": 3,
     "race": "Tabaxi",
     "shortDescription": "Me and my loyal familiar will do any job for you, from guarding to murder... for a fair price of course."
@@ -18,7 +18,7 @@
   "miaxi": {
     "name": "Miaxi",
     "class": "Sorcerer",
-    "avatar": "/assets/backend-data/Miaxi.png",
+    "avatar": "assets/backend-data/Miaxi.png",
     "level": 4,
     "race": "Human",
     "shortDescription": "I'd gladly help you solve your issues."
@@ -26,7 +26,7 @@
   "ako": {
     "name": "Ako",
     "class": "Wizard",
-    "avatar": "/assets/backend-data/Ako.png",
+    "avatar": "assets/backend-data/Ako.png",
     "level": 4,
     "race": "Human",
     "shortDescription": "I will do anything no questions asked, as long as you support my researches."
