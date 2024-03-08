@@ -1,0 +1,215 @@
+{
+  "definitions": {
+    "attribute": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20
+    },
+    "skill": {
+      "type": "boolean",
+      "widget": {
+        "formlyConfig": {
+          "defaultValue": false
+        }
+      }
+    }
+  },
+  "required": ["name", "race", "class", "level", "avatar", "shortDescription"],
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name",
+      "minLength": 1,
+      "maxLength": 25
+    },
+    "race": {
+      "type": "string",
+      "title": "Race",
+      "enum": [
+        "Dwarf",
+        "Elf",
+        "Halfling",
+        "Human",
+        "Dragonborn",
+        "Gnome",
+        "Half-Elf",
+        "Half-Orc",
+        "Tiefling",
+        "Tabaxi",
+        "Lizardfolk"
+      ]
+    },
+    "class": {
+      "type": "string",
+      "title": "Class",
+      "enum": [
+        "Fighter",
+        "Rogue",
+        "Wizard",
+        "Cleric",
+        "Bard",
+        "Druid",
+        "Monk",
+        "Paladin",
+        "Ranger",
+        "Sorcerer",
+        "Warlock",
+        "Barbarian"
+      ]
+    },
+    "level": {
+      "type": "integer",
+      "title": "Level",
+      "minimum": 1,
+      "maximum": 20
+    },
+    "avatar": {
+      "type": "string",
+      "title": "Avatar",
+      "widget": {
+        "formlyConfig": {
+          "type": "image"
+        }
+      }
+    },
+    "shortDescription": {
+      "type": "string",
+      "title": "Short Description",
+      "minLength": 10,
+      "maxLength": 100,
+      "widget": {
+        "formlyConfig": {
+          "type": "textarea",
+          "templateOptions": {
+            "rows": 2,
+            "placeholder": "Short description for your character card"
+          }
+        }
+      }
+    },
+    "longDescription": {
+      "type": "string",
+      "title": "Long Description",
+      "minLength": 10,
+      "maxLength": 1000,
+      "widget": {
+        "formlyConfig": {
+          "type": "textarea",
+          "templateOptions": {
+            "rows": 5,
+            "placeholder": "Full information about your character visible on the character page"
+          }
+        }
+      }
+    },
+    "attributes": {
+      "type": "object",
+      "title": "Attributes",
+      "properties": {
+        "strength": {
+          "$ref": "#/definitions/attribute",
+          "title": "Str"
+        },
+        "dexterity": {
+          "$ref": "#/definitions/attribute",
+          "title": "Dex"
+        },
+        "constitution": {
+          "$ref": "#/definitions/attribute",
+          "title": "Con"
+        },
+        "intelligence": {
+          "$ref": "#/definitions/attribute",
+          "title": "Int"
+        },
+        "wisdom": {
+          "$ref": "#/definitions/attribute",
+          "title": "Wis"
+        },
+        "charisma": {
+          "$ref": "#/definitions/attribute",
+          "title": "Cha"
+        }
+      }
+    },
+    "skills": {
+      "type": "object",
+      "title": "Skills",
+      "properties": {
+        "acrobatics": {
+          "$ref": "#/definitions/skill",
+          "title": "Acrobatics"
+        },
+        "animalHandling": {
+          "$ref": "#/definitions/skill",
+          "title": "Animal Handling"
+        },
+        "arcana": {
+          "$ref": "#/definitions/skill",
+          "title": "Arcana"
+        },
+        "athletics": {
+          "$ref": "#/definitions/skill",
+          "title": "Athletics"
+        },
+        "deception": {
+          "$ref": "#/definitions/skill",
+          "title": "Deception"
+        },
+        "history": {
+          "$ref": "#/definitions/skill",
+          "title": "History"
+        },
+        "insight": {
+          "$ref": "#/definitions/skill",
+          "title": "Insight"
+        },
+        "intimidation": {
+          "$ref": "#/definitions/skill",
+          "title": "Intimidation"
+        },
+        "investigation": {
+          "$ref": "#/definitions/skill",
+          "title": "Investigation"
+        },
+        "medicine": {
+          "$ref": "#/definitions/skill",
+          "title": "Medicine"
+        },
+        "nature": {
+          "$ref": "#/definitions/skill",
+          "title": "Nature"
+        },
+        "perception": {
+          "$ref": "#/definitions/skill",
+          "title": "Perception"
+        },
+        "performance": {
+          "$ref": "#/definitions/skill",
+          "title": "Performance"
+        },
+        "persuasion": {
+          "$ref": "#/definitions/skill",
+          "title": "Persuasion"
+        },
+        "religion": {
+          "$ref": "#/definitions/skill",
+          "title": "Religion"
+        },
+        "sleightOfHand": {
+          "$ref": "#/definitions/skill",
+          "title": "Sleight of Hand"
+        },
+        "stealth": {
+          "$ref": "#/definitions/skill",
+          "title": "Stealth"
+        },
+        "survival": {
+          "$ref": "#/definitions/skill",
+          "title": "Survival"
+        }
+      }
+    }
+  }
+}
