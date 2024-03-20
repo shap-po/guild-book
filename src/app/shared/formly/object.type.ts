@@ -8,7 +8,6 @@ import { NgForOf, NgIf } from '@angular/common';
   standalone: true,
   imports: [NgIf, NgForOf, FormlyModule],
   template: `
-    <legend *ngIf="props.label">{{ props.label }}</legend>
     <div class="fields">
       <formly-field
         *ngFor="let f of field.fieldGroup"

@@ -2,13 +2,11 @@
 
 Guild Book is a tool designed for Dungeons and Dragons (DnD) enthusiasts. It allows you to create and share character sheets with ease. Each character is presented as a unique page in the guild book, making it easy to navigate and find the information you need.
 
-## Features
+This project is a proof of concept and was created as part of the internship program. It does not have all the features of a fully-fledged application.
 
-- **Creation**: Create detailed character sheets with all the necessary information for your DnD characters. 
+## Visit the Site
 
-- **Sharing**: Share your character sheets with your fellow players or Dungeon Master. 
-
-- **Viewing**: View character sheets created by other players.
+You can view the deployed application [here](https://shap-po.github.io/guild-book/).
 
 ## Getting Started
 
