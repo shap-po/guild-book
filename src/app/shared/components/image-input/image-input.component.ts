@@ -9,43 +9,12 @@ import { ImageInputDirective } from './image-input.directive';
   selector: 'app-image-input',
   standalone: true,
   imports: [MatButtonModule, MatIconModule, NgIf, ImageInputDirective],
-  template: `
-    <div
-      class="app-image-input"
-      image-input
-      (fileDropped)="onFileDrop($event)"
-      [class.has-image]="!!value"
-      (click)="fileInputRef.click()"
-    >
-      <input
-        type="file"
-        (change)="onFileInput($event)"
-        #fileInputRef
-        hidden
-        accept="image/png, image/jpeg"
-      />
-
-      <ng-container *ngIf="!value; else imageRef">
-        <button mat-raised-button color="primary">
-          <mat-icon>add_photo_alternate</mat-icon>
-          Select Image
-        </button>
-        <span> or drop it here</span>
-        <span *ngIf="error" class="error">{{ error }}</span>
-      </ng-container>
-
-      <ng-template #imageRef>
-        <img [src]="value" alt="image" />
-      </ng-template>
-
-      <div class="overlay"></div>
-    </div>
-  `,
+  templateUrl: './image-input.component.html',
   styleUrl: './image-input.component.scss',
 })
 export class ImageInputComponent {
   @Input() value?: string | ArrayBuffer | null;
-  error?: string;
+  @Input() disabled?: boolean = false;
 
   @Output() fileDropped = new EventEmitter<File>();
 
@@ -58,11 +27,9 @@ export class ImageInputComponent {
 
   onFileDrop(file: File) {
     if (!file) return;
-    if (file.type.indexOf('image') === -1) {
-      this.error = 'Only images are allowed';
-      return;
-    }
+    if (file.type.indexOf('image') === -1) return; // Only accept images; can only happen if user changes the accept attribute
 
+    // Read the file and emit the result
     const reader = new FileReader();
     reader.onload = (e) => {
       const result = e.target?.result;

@@ -77,7 +77,7 @@
       "type": "string",
       "title": "Short Description",
       "minLength": 10,
-      "maxLength": 100,
+      "maxLength": 120,
       "widget": {
         "formlyConfig": {
           "type": "textarea",
@@ -92,12 +92,11 @@
       "type": "string",
       "title": "Long Description",
       "minLength": 10,
-      "maxLength": 1000,
+      "maxLength": 1200,
       "widget": {
         "formlyConfig": {
           "type": "textarea",
           "templateOptions": {
-            "rows": 5,
             "placeholder": "Full information about your character visible on the character page"
           }
         }
@@ -208,6 +207,11 @@
         "survival": {
           "$ref": "#/definitions/skill",
           "title": "Survival"
+        }
+      },
+      "widget": {
+        "formlyConfig": {
+          "type": "object-group"
         }
       }
     }

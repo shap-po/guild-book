@@ -4,13 +4,14 @@
   align-items: center;
   justify-content: center;
 
-  border-radius: 5px;
+  box-sizing: border-box;
   overflow: hidden;
   position: relative;
 
-  &:not(.has-image) {
-    border: 2px dashed #ccc;
-  }
+  border-radius: var(--mdc-outlined-text-field-container-shape);
+  border-width: var(--mdc-outlined-text-field-outline-width);
+  border-color: var(--mdc-outlined-text-field-outline-color);
+  border-style: solid;
 
   .overlay {
     width: 100%;
@@ -20,23 +21,23 @@
     left: 0;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    z-index: 2; // overlay on top of the button
   }
 
   &.fileover .overlay,
   .overlay:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
+  &.app-image-input-disabled .overlay {
+    background-color: transparent;
+    cursor: auto;
+  }
 
   button {
     margin-bottom: 8px;
   }
-
-  span {
-    font-size: 1.2em;
-
-    &.error {
-      color: #f66;
-    }
+  .hint {
+    color: var(--mdc-outlined-text-field-label-text-color);
   }
 
   img {

@@ -17,9 +17,9 @@ import profiles from '@assets/backend-data/profiles.json';
     NgFor,
     KeyValuePipe,
   ],
-  templateUrl: './users.component.html',
-  styleUrl: './users.component.scss',
+  templateUrl: './browse.component.html',
+  styleUrl: './browse.component.scss',
 })
-export class UsersComponent {
+export class BrowseComponent {
   profiles = profiles;
 }

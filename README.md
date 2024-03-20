@@ -1,27 +1,38 @@
-# GuildBook
+# Guild Book: DnD Character Sheet Creator and Sharing Tool
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
+Guild Book is a tool designed for Dungeons and Dragons (DnD) enthusiasts. It allows you to create and share character sheets with ease. Each character is presented as a unique page in the guild book, making it easy to navigate and find the information you need.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Creation**: Create detailed character sheets with all the necessary information for your DnD characters. 
 
-## Code scaffolding
+- **Sharing**: Share your character sheets with your fellow players or Dungeon Master. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Viewing**: View character sheets created by other players.
 
-## Build
+## Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- You have installed the latest version of [Node.js and npm](https://nodejs.org/en/download/).
+- You have installed [Angular CLI](https://github.com/angular/angular-cli). You can install it by running `npm install -g @angular/cli`.
+
+### Running Guild Book Locally
+
+To run Guild Book on your local machine, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the necessary dependencies by running `npm install`.
+4. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+### Building the Project
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Deploying to GitHub Pages
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Run `ng deploy --base-href=/guild-book/` to deploy the project to GitHub Pages.
+2. Navigate to `https://<username>.github.io/guild-book/` to view the deployed application.

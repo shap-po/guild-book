@@ -10,6 +10,8 @@ import { FormlyModule } from '@ngx-formly/core';
 import { ObjectTypeComponent } from '@shared/formly/object.type';
 import { ImageTypeComponent } from '@app/shared/formly/image.type';
 import { ProfileState } from './core/state/profile.state';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { ObjectGroupTypeComponent } from './shared/formly/object-group/object-group.type';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -24,9 +26,17 @@ export const appConfig: ApplicationConfig = {
         ],
         types: [
           { name: 'object', component: ObjectTypeComponent },
+          { name: 'object-group', component: ObjectGroupTypeComponent },
           { name: 'image', component: ImageTypeComponent },
         ],
       })
     ),
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: {
+        appearance: 'outline',
+        floatLabel: 'always',
+      },
+    },
   ],
 };

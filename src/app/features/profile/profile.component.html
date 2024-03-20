@@ -1,8 +1,35 @@
 <form [formGroup]="form">
-  <button (click)="fill()">fill</button>
-  <button (click)="clear()">clear</button>
-  <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
-  <button type="submit" (click)="save()" mat-flat-button *ngIf="edit">
-    Save
-  </button>
+  <!-- dev buttons to show functionality -->
+  <div *ngIf="dev" class="dev-controls">
+    <button mat-raised-button color="primary" (click)="fill()">fill</button>
+    <button mat-raised-button color="primary" (click)="clear()">clear</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="save()"
+      *ngIf="!options.formState.disabled"
+    >
+      Save
+    </button>
+  </div>
+
+  <formly-form
+    [form]="form"
+    [fields]="fields"
+    [model]="model"
+    [options]="options"
+  ></formly-form>
+  <div class="form-buttons">
+    <button
+      type="submit"
+      (click)="save()"
+      mat-flat-button
+      color="primary"
+      *ngIf="!options.formState.disabled"
+      class="save-btn"
+    >
+      Save
+    </button>
+  </div>
 </form>

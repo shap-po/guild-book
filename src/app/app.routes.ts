@@ -10,11 +10,13 @@ export const routes: Routes = [
   {
     path: 'browse',
     loadComponent: () =>
-      import('./features/users/users.component').then((m) => m.UsersComponent),
+      import('./features/browse/browse.component').then(
+        (m) => m.BrowseComponent
+      ),
   },
   { path: 'profile', redirectTo: 'profile/', pathMatch: 'full' },
   {
-    path: 'profile/:id',
+    path: 'profile/:uuid',
     loadComponent: () =>
       import('./features/profile/profile.component').then(
         (m) => m.ProfileComponent

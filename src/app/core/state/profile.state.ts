@@ -28,9 +28,11 @@ export class ProfileStateModel {
 
 export class EditProfile {
   static readonly type = '[Profile] Edit';
-  constructor(public payload: Profile) {
-    console.log('EditProfile payload', payload);
-  }
+  constructor(public payload: Profile) {}
+}
+
+export class DeleteProfile {
+  static readonly type = '[Profile] Delete';
 }
 
 @State<ProfileStateModel>({
@@ -45,10 +47,15 @@ export class ProfileState {
 
   @Action(EditProfile)
   editProfile(ctx: StateContext<ProfileStateModel>, action: EditProfile) {
-    console.log('EditProfile action', action);
-    const state = ctx.getState();
     ctx.patchState({
       profile: action.payload,
+    });
+  }
+
+  @Action(DeleteProfile)
+  deleteProfile(ctx: StateContext<ProfileStateModel>) {
+    ctx.patchState({
+      profile: null,
     });
   }
 }

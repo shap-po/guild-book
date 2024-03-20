@@ -1,0 +1,29 @@
+<!-- classes like "mdc-text-field--outlined" are added to mimic native fields -->
+<div
+  [class]="
+  'object-group mat-mdc-text-field-wrapper mdc-text-field--outlined' +
+  (props.disabled ? ' mdc-text-field--disabled' : '')
+"
+>
+  <div
+    class="mdc-notched-outline mdc-notched-outline--notched mdc-notched-outline--upgraded"
+  >
+    <div class="mdc-notched-outline__leading"></div>
+
+    <div class="mdc-notched-outline__notch">
+      <label
+        *ngIf="props.label"
+        class="mdc-floating-label mdc-floating-label--float-above"
+        for="{{ id }}"
+      >
+        <mat-label> {{ props.label }} </mat-label>
+      </label>
+    </div>
+
+    <div class="mdc-notched-outline__trailing"></div>
+  </div>
+
+  <div class="fields">
+    <formly-field *ngFor="let f of field.fieldGroup" [field]="f"></formly-field>
+  </div>
+</div>

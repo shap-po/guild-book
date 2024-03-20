@@ -9,15 +9,12 @@ import { NgForOf, NgIf } from '@angular/common';
   imports: [NgIf, NgForOf, FormlyModule],
   template: `
     <legend *ngIf="props.label">{{ props.label }}</legend>
-    <p *ngIf="props.description">{{ props.description }}</p>
-    <div
-      class="alert alert-danger"
-      role="alert"
-      *ngIf="showError && formControl.errors"
-    >
-      <formly-validation-message [field]="field"></formly-validation-message>
+    <div class="fields">
+      <formly-field
+        *ngFor="let f of field.fieldGroup"
+        [field]="f"
+      ></formly-field>
     </div>
-    <formly-field *ngFor="let f of field.fieldGroup" [field]="f"></formly-field>
   `,
 })
 export class ObjectTypeComponent extends FieldType {}

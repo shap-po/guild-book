@@ -1,0 +1,30 @@
+<div
+  [class]="'app-image-input ' + (disabled ? 'app-image-input-disabled' : '')"
+  image-input
+  (fileDropped)="onFileDrop($event)"
+  [class.has-image]="!!value"
+  (click)="fileInputRef.click()"
+>
+  <input
+    type="file"
+    (change)="onFileInput($event)"
+    #fileInputRef
+    hidden
+    accept="image/png, image/jpeg"
+    [disabled]="disabled"
+  />
+
+  <ng-container *ngIf="!value; else imageRef">
+    <button mat-flat-button color="primary">
+      <mat-icon>add_photo_alternate</mat-icon>
+      Select Image
+    </button>
+    <span class="hint"> or drop it here</span>
+  </ng-container>
+
+  <ng-template #imageRef>
+    <img [src]="value" alt="" />
+  </ng-template>
+
+  <div class="overlay"></div>
+</div>

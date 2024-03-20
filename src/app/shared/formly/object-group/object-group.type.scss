@@ -1,0 +1,37 @@
+.object-group {
+  display: flex;
+  position: relative;
+  height: unset;
+  width: unset;
+
+  & > .mdc-notched-outline {
+    label {
+      // for some reason, the label is higher than needed, adjust it
+      top: 28px;
+    }
+    .mdc-notched-outline__notch {
+      width: calc(
+        40px * var(--mat-mdc-form-field-floating-label-scale, 0.75) + 9px
+      );
+    }
+  }
+}
+
+.fields ::ng-deep {
+  padding: var(--mat-form-field-container-vertical-padding) 0;
+
+  // remove border around all the fields
+  [class^="mdc-notched-outline__"] {
+    border: none;
+  }
+
+  // remove element paddings
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+  .mat-mdc-form-field-infix,
+  .mat-mdc-text-field-wrapper {
+    padding: 0 !important;
+    min-height: auto;
+  }
+}
