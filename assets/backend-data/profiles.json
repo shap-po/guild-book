@@ -4,16 +4,31 @@
     "class": "Druid",
     "avatar": "assets/backend-data/Eah.png",
     "level": 2,
-    "race": "Half-ork",
+    "race": "Half-Orc",
     "shortDescription": "Eah talk not much. Job done fast."
   },
   "shadow": {
     "name": "Shadow",
-    "class": "Mage",
+    "class": "Sorcerer",
     "avatar": "assets/backend-data/Shadow.png",
-    "level": 3,
+    "level": 5,
     "race": "Tabaxi",
-    "shortDescription": "Me and my loyal familiar will do any job for you, from guarding to murder... for a fair price of course."
+    "shortDescription": "Me and my loyal familiar will do any job for you, from guarding to murder... for a fair price of course.",
+    "longDescription": "Shadow, a Tabaxi Sorcerer of level 5, brings an unparalleled mastery of shadow magic to any endeavor. With his unwavering focus and keen intellect, he weaves intricate spells that manipulate the very essence of darkness, allowing him to strike from the shadows or shroud allies in protective veils. His loyal crow familiar acts as his ever-watchful eyes and ears, ensuring no detail goes unnoticed.\n\nEqually adept at stealth and combat, Shadow's services are invaluable for those seeking a versatile and formidable ally. From covert operations to open confrontations, his expertise in acrobatics, athletics, investigation, and persuasion make him a force to be reckoned with. Whether you require a skilled guardian, a cunning assassin, or anything in between, Shadow and his faithful companion are ready to take on any challenge, provided the price is fair.",
+    "attributes": {
+      "strength": 16,
+      "dexterity": 15,
+      "constitution": 17,
+      "intelligence": 16,
+      "wisdom": 14,
+      "charisma": 13
+    },
+    "skills": {
+      "acrobatics": true,
+      "athletics": true,
+      "investigation": true,
+      "persuasion": true
+    }
   },
   "miaxi": {
     "name": "Miaxi",
@@ -21,7 +36,7 @@
     "avatar": "assets/backend-data/Miaxi.png",
     "level": 4,
     "race": "Human",
-    "shortDescription": "I'd gladly help you solve your issues."
+    "shortDescription": "I'd gladly help you resolve your issues."
   },
   "ako": {
     "name": "Ako",
@@ -30,5 +45,13 @@
     "level": 4,
     "race": "Human",
     "shortDescription": "I will do anything no questions asked, as long as you support my researches."
+  },
+  "yyy": {
+    "name": "???",
+    "class": "",
+    "avatar": "assets/backend-data/someone.png",
+    "level": 0,
+    "race": "Human?",
+    "shortDescription": "I by a wieldeal power of humbly vent the sts entur ser ther ane bethe pled figuild ing powesery."
   }
 }
